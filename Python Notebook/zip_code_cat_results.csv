@@ -1,0 +1,64 @@
+,categorical_features,mean_mae,mean_rmse,mean_rsquare,mean_adj_rsquare
+0,"['grade', 'zipcode', 'yr_built_bin', 'renovation_cat']",76919.665,118926.679,0.827,0.827
+1,"['bedrooms', 'zipcode', 'yr_built_bin', 'renovation_cat']",79732.911,123326.773,0.814,0.814
+2,"['bathrooms', 'zipcode', 'yr_built_bin', 'renovation_cat']",78892.639,121949.958,0.818,0.818
+3,"['view', 'zipcode', 'yr_built_bin', 'renovation_cat']",79537.95,123121.157,0.815,0.815
+4,"['condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",79709.06,123266.612,0.815,0.814
+5,"['floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",79563.772,123165.259,0.815,0.815
+6,"['grade', 'bedrooms', 'zipcode', 'yr_built_bin', 'renovation_cat']",76874.346,118909.557,0.827,0.827
+7,"['grade', 'bathrooms', 'zipcode', 'yr_built_bin', 'renovation_cat']",76639.192,118532.751,0.828,0.828
+8,"['grade', 'view', 'zipcode', 'yr_built_bin', 'renovation_cat']",76776.679,118724.635,0.828,0.828
+9,"['grade', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",76944.146,118916.645,0.827,0.827
+10,"['grade', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76801.188,118825.543,0.828,0.828
+11,"['bedrooms', 'bathrooms', 'zipcode', 'yr_built_bin', 'renovation_cat']",78861.028,121923.703,0.819,0.818
+12,"['bedrooms', 'view', 'zipcode', 'yr_built_bin', 'renovation_cat']",79595.796,123160.655,0.815,0.815
+13,"['bedrooms', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",79769.542,123306.711,0.814,0.814
+14,"['bedrooms', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",79612.137,123195.619,0.815,0.815
+15,"['bathrooms', 'view', 'zipcode', 'yr_built_bin', 'renovation_cat']",78735.484,121741.48,0.819,0.819
+16,"['bathrooms', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",78905.628,121919.953,0.819,0.818
+17,"['bathrooms', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",78800.623,121827.14,0.819,0.819
+18,"['view', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",79571.755,123095.84,0.815,0.815
+19,"['view', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",79432.577,122986.989,0.815,0.815
+20,"['condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",79598.324,123138.21,0.815,0.815
+21,"['grade', 'bedrooms', 'bathrooms', 'zipcode', 'yr_built_bin', 'renovation_cat']",76532.114,118448.548,0.829,0.829
+22,"['grade', 'bedrooms', 'view', 'zipcode', 'yr_built_bin', 'renovation_cat']",76721.782,118716.874,0.828,0.828
+23,"['grade', 'bedrooms', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",76891.465,118903.019,0.827,0.827
+24,"['grade', 'bedrooms', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76742.317,118792.161,0.828,0.828
+25,"['grade', 'bathrooms', 'view', 'zipcode', 'yr_built_bin', 'renovation_cat']",76473.965,118325.514,0.829,0.829
+26,"['grade', 'bathrooms', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",76645.921,118509.291,0.829,0.828
+27,"['grade', 'bathrooms', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76530.002,118412.367,0.829,0.829
+28,"['grade', 'view', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",76792.114,118732.204,0.828,0.828
+29,"['grade', 'view', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76653.888,118615.027,0.828,0.828
+30,"['grade', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76826.628,118808.975,0.828,0.828
+31,"['bedrooms', 'bathrooms', 'view', 'zipcode', 'yr_built_bin', 'renovation_cat']",78705.017,121715.302,0.819,0.819
+32,"['bedrooms', 'bathrooms', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",78870.324,121892.821,0.819,0.818
+33,"['bedrooms', 'bathrooms', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",78770.762,121804.221,0.819,0.819
+34,"['bedrooms', 'view', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",79628.947,123146.556,0.815,0.815
+35,"['bedrooms', 'view', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",79485.393,123022.123,0.815,0.815
+36,"['bedrooms', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",79657.938,123173.375,0.815,0.815
+37,"['bathrooms', 'view', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",78743.209,121709.956,0.819,0.819
+38,"['bathrooms', 'view', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",78656.269,121618.997,0.819,0.819
+39,"['bathrooms', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",78820.84,121799.467,0.819,0.819
+40,"['view', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",79468.266,122973.643,0.815,0.815
+41,"['grade', 'bedrooms', 'bathrooms', 'view', 'zipcode', 'yr_built_bin', 'renovation_cat']",76376.729,118245.185,0.829,0.829
+42,"['grade', 'bedrooms', 'bathrooms', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",76550.577,118436.103,0.829,0.829
+43,"['grade', 'bedrooms', 'bathrooms', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76412.668,118323.003,0.829,0.829
+44,"['grade', 'bedrooms', 'view', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",76744.385,118709.835,0.828,0.828
+45,"['grade', 'bedrooms', 'view', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76592.841,118608.094,0.828,0.828
+46,"['grade', 'bedrooms', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76767.574,118781.702,0.828,0.828
+47,"['grade', 'bathrooms', 'view', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",76489.76,118294.861,0.829,0.829
+48,"['grade', 'bathrooms', 'view', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76361.232,118214.244,0.829,0.829
+49,"['grade', 'bathrooms', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76550.073,118394.265,0.829,0.829
+50,"['grade', 'view', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76679.548,118614.64,0.828,0.828
+51,"['bedrooms', 'bathrooms', 'view', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",78718.066,121696.331,0.819,0.819
+52,"['bedrooms', 'bathrooms', 'view', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",78603.571,121586.559,0.82,0.819
+53,"['bedrooms', 'bathrooms', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",78791.271,121776.615,0.819,0.819
+54,"['bedrooms', 'view', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",79521.142,123013.91,0.815,0.815
+55,"['bathrooms', 'view', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",78660.883,121592.605,0.82,0.819
+56,"['grade', 'bedrooms', 'bathrooms', 'view', 'condition', 'zipcode', 'yr_built_bin', 'renovation_cat']",76396.307,118230.468,0.829,0.829
+57,"['grade', 'bedrooms', 'bathrooms', 'view', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76249.824,118125.175,0.83,0.829
+58,"['grade', 'bedrooms', 'bathrooms', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76437.914,118319.184,0.829,0.829
+59,"['grade', 'bedrooms', 'view', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76611.659,118567.875,0.828,0.828
+60,"['grade', 'bathrooms', 'view', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76378.1,118194.066,0.829,0.829
+61,"['bedrooms', 'bathrooms', 'view', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",78620.654,121558.04,0.82,0.819
+62,"['grade', 'bedrooms', 'bathrooms', 'view', 'condition', 'floors', 'zipcode', 'yr_built_bin', 'renovation_cat']",76270.592,118094.828,0.83,0.83

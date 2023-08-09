@@ -1,0 +1,64 @@
+,categorical_features,mean_mae,mean_rmse,mean_rsquare,mean_adj_rsquare
+0,"['grade', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",71024.221,110811.247,0.85,0.85
+1,"['bedrooms', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",74080.186,115556.722,0.837,0.837
+2,"['bathrooms', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73332.492,114296.189,0.84,0.84
+3,"['view', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73875.559,115369.662,0.837,0.837
+4,"['condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",74051.484,115530.132,0.837,0.837
+5,"['floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73970.992,115421.687,0.837,0.837
+6,"['grade', 'bedrooms', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",71004.171,110779.852,0.85,0.85
+7,"['grade', 'bathrooms', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70831.196,110455.86,0.851,0.851
+8,"['grade', 'view', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70917.062,110646.699,0.85,0.85
+9,"['grade', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",71038.003,110819.354,0.85,0.85
+10,"['grade', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70971.903,110708.91,0.85,0.85
+11,"['bedrooms', 'bathrooms', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73316.977,114270.701,0.841,0.84
+12,"['bedrooms', 'view', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73926.12,115431.672,0.837,0.837
+13,"['bedrooms', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",74113.115,115543.09,0.837,0.837
+14,"['bedrooms', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",74020.171,115445.515,0.837,0.837
+15,"['bathrooms', 'view', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73172.09,114125.335,0.841,0.841
+16,"['bathrooms', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73353.032,114286.062,0.84,0.84
+17,"['bathrooms', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73315.785,114212.96,0.841,0.841
+18,"['view', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73886.352,115375.657,0.837,0.837
+19,"['view', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73827.379,115276.825,0.838,0.838
+20,"['condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",74013.185,115384.665,0.837,0.837
+21,"['grade', 'bedrooms', 'bathrooms', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70818.708,110451.798,0.851,0.851
+22,"['grade', 'bedrooms', 'view', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70888.06,110617.672,0.851,0.85
+23,"['grade', 'bedrooms', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",71005.12,110809.756,0.85,0.85
+24,"['grade', 'bedrooms', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70913.148,110615.604,0.851,0.85
+25,"['grade', 'bathrooms', 'view', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70741.1,110315.629,0.851,0.851
+26,"['grade', 'bathrooms', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70857.179,110519.601,0.851,0.851
+27,"['grade', 'bathrooms', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70836.051,110429.386,0.851,0.851
+28,"['grade', 'view', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70919.279,110670.436,0.85,0.85
+29,"['grade', 'view', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70852.746,110552.166,0.851,0.851
+30,"['grade', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70984.954,110732.454,0.85,0.85
+31,"['bedrooms', 'bathrooms', 'view', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73175.073,114089.437,0.841,0.841
+32,"['bedrooms', 'bathrooms', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73331.086,114238.945,0.841,0.84
+33,"['bedrooms', 'bathrooms', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73290.122,114185.665,0.841,0.841
+34,"['bedrooms', 'view', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73961.725,115415.803,0.837,0.837
+35,"['bedrooms', 'view', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73864.341,115284.881,0.838,0.838
+36,"['bedrooms', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",74047.481,115456.873,0.837,0.837
+37,"['bathrooms', 'view', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73189.077,114106.733,0.841,0.841
+38,"['bathrooms', 'view', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73149.252,114014.389,0.841,0.841
+39,"['bathrooms', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73329.263,114166.12,0.841,0.841
+40,"['view', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73860.299,115276.489,0.838,0.838
+41,"['grade', 'bedrooms', 'bathrooms', 'view', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70715.252,110240.986,0.852,0.851
+42,"['grade', 'bedrooms', 'bathrooms', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70810.677,110447.006,0.851,0.851
+43,"['grade', 'bedrooms', 'bathrooms', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70789.722,110360.071,0.851,0.851
+44,"['grade', 'bedrooms', 'view', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70907.703,110629.865,0.851,0.85
+45,"['grade', 'bedrooms', 'view', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70814.646,110466.342,0.851,0.851
+46,"['grade', 'bedrooms', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70953.298,110682.485,0.85,0.85
+47,"['grade', 'bathrooms', 'view', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70754.624,110336.631,0.851,0.851
+48,"['grade', 'bathrooms', 'view', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70714.297,110244.455,0.852,0.851
+49,"['grade', 'bathrooms', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70845.999,110424.246,0.851,0.851
+50,"['grade', 'view', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70869.428,110552.192,0.851,0.851
+51,"['bedrooms', 'bathrooms', 'view', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73178.074,114074.909,0.841,0.841
+52,"['bedrooms', 'bathrooms', 'view', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73127.423,113974.746,0.841,0.841
+53,"['bedrooms', 'bathrooms', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73301.715,114126.397,0.841,0.841
+54,"['bedrooms', 'view', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73902.692,115299.289,0.838,0.837
+55,"['bathrooms', 'view', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73172.917,114021.043,0.841,0.841
+56,"['grade', 'bedrooms', 'bathrooms', 'view', 'condition', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70716.769,110257.448,0.851,0.851
+57,"['grade', 'bedrooms', 'bathrooms', 'view', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70674.598,110133.211,0.852,0.852
+58,"['grade', 'bedrooms', 'bathrooms', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70791.307,110338.408,0.851,0.851
+59,"['grade', 'bedrooms', 'view', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70838.293,110513.231,0.851,0.851
+60,"['grade', 'bathrooms', 'view', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70723.849,110241.462,0.852,0.851
+61,"['bedrooms', 'bathrooms', 'view', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",73147.593,113997.494,0.841,0.841
+62,"['grade', 'bedrooms', 'bathrooms', 'view', 'condition', 'floors', 'geo_cluster', 'yr_built_bin', 'renovation_cat']",70684.991,110154.51,0.852,0.852
