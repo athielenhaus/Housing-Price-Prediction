@@ -20,6 +20,8 @@ After importing the data, EDA was conducted using EDA libraries including Sweetv
 This revealed statistical as well as geographic outliers.
 ![alt text](Screenshot%20Tableau%20Map.jpg)
 
+<img src="Screenshot%20Tableau%20Map.jpg" alt="drawing" width="200"/>
+
 ##### Creation of a baseline model
 ##### Feature Engineering and Selection
     - Outlier removal
