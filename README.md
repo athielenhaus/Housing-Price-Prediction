@@ -44,8 +44,8 @@ To obtain some industry knowledge, a brief internet research was conducted which
 
 
 ### Creation of a baseline model
-A baseline vanilla Linear Regression model was created with Scikit Learn. In addition, some data preparation and testing functions were created for facilitating testing, including for the purposes of cross validation and for testing on validation and test sets.
-The initial tests on the raw data (minus the 'id' and 'date' columns indicated an R2 of approx. 0.7 with an MAE of over $120,000 
+A baseline vanilla Linear Regression model was created with Scikit Learn. In addition, some data preparation and testing functions were created to facilitate testing. These also included functions for cross validation on the training data and for testing on validation and test sets.
+The initial tests on the raw data (minus the 'id' and 'date' columns) indicated an R2 of approx. 0.7 with an MAE of over $120,000 
 
 ### Feature Engineering and Selection
 The Feature Engineering and Selection steps included:
@@ -89,11 +89,11 @@ In this final step, we examined whether the Linear Regression model we had been 
 ### Conclusion
 Due to the fact that the Linear Regression model was computationally less expensive, performed almost evenly in cross-validation, and performed better on the test set, it was chosen over the Lasso model.
 
-The final model's adjusted R2 score was 85.3 with an MAE of 69,751. This represents a significant improvement over the baseline model. Nonetheless, it must be admitted that the MAE is still very high and may render the model less useful for predicting house prices. The next step would be to try non-linear models like Random Forest or XGBoost. 
+The final model's adjusted R2 score was 85.3 with an MAE of $69,751. This represents a significant improvement over the baseline model. Nonetheless, it must be admitted that the MAE is still very high and may render the model less useful for predicting house prices. The next step would be to try non-linear models like Random Forest or XGBoost. 
 
 For me personally, the project was highly useful as I learned to work with several new tools and methods, including Scikit-Learn's pipelines and Grid Search. I also learned the utility of creating testing- and scoring functions which can significantly accelerate the testing process.
 
-Thanks for reading! In case of any questions, please contact me at arne.thielenhaus@gmail.com.
+Thanks for reading! In case of any questions, please drop me a line at arne.thielenhaus@gmail.com.
 
 ### Sources:
 - Insights regarding housing prices: https://www.opendoor.com/articles/factors-that-influence-home-value
