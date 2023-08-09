@@ -13,12 +13,26 @@ In this imaginary scenario, the client is a real estate agency in the Seattle ar
     
 #### Steps
 
-The following steps were undertaken:
+The following steps were undertaken to find the model:
+- Exploratory Data Analysis (EDA)
+- Creation of a baseline model
+- Feature Engineering and Selection
+- Gridsearch
+
+Below we provide some additional information about the individual steps.
 
 ##### Exploratory Data Analysis
 After importing the data, EDA was conducted using EDA libraries including Sweetviz and Dataprep as well as by plotting data with Matplotlib and on a map in Tableau.
-This revealed statistical as well as geographic outliers.
+The dataset is composed of 21 columns. Two columns, 'id' and 'date', were quickly dropped as their lack of relevance to estimating the price was clear.
+The other learnings from EDA included:
+- no missing data.
+-the dataset includes statistical as well as geographic outliers.
 ![alt text](Screenshot%20Tableau%20Map.jpg)
+
+
+
+
+
 
 <img src="Screenshot%20Tableau%20Map.jpg" alt="drawing" width="200"/>
 
