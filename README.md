@@ -27,14 +27,7 @@ The dataset is composed of 21 columns. Two columns, 'id' and 'date', were quickl
 The other learnings from EDA included:
 - no missing data.
 -the dataset includes statistical as well as geographic outliers.
-![alt text](Screenshot%20Tableau%20Map.jpg)
-
-
-
-
-
-
-<img src="Screenshot%20Tableau%20Map.jpg" alt="drawing" width="200"/>
+<img src="Screenshot%20Tableau%20Map.jpg" alt="drawing" width="400"/>
 
 ##### Creation of a baseline model
 ##### Feature Engineering and Selection
