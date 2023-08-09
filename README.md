@@ -76,12 +76,14 @@ A series of tests was done to train and test models after removing features whic
 __Binning__  
 Do to the fact that the column 'yr_renovated' had the problem with 0 values, and 'yr_built' did not have a clear linear relationship with price, it seemed that both would be good candidates for binning. 'yr_built' was binned according to time periods which got larger the further back they went in time, to allow for a more or less even distribution. 
 
-'yr_renovated' was binned in a similar fashion (bins: 'very recent', 'recent', 'distant', 'not relevant'), where properties with 0 values were placed in the bin 'not relevant'. >95% of samples were in this latter bin, and plotting the bins did not show a easily explained relationship between bin and price. Nonetheless, the performance of the model improved slightly. Since the benefits of a renovation also seemed likely to be tied to property age, an experiment was done to combine the 'yr_renovated' and 'yr_built' bins, but this did not yield any improvements in model performance.
+'yr_renovated' was binned in a similar fashion (bins: 'very recent', 'recent', 'distant', 'not relevant'), where properties with 0 values were placed in the bin 'not relevant'. >95% of samples were in this latter bin, and plotting the bins did not show a easily explained relationship between bin and price. Nonetheless, the performance of the model improved slightly. 
 
-__Test different combinations of categorical variables__
+Since the benefits of a renovation also seemed likely to be tied to property age, an experiment was done to combine the 'yr_renovated' and 'yr_built' bins, but this did not yield any improvements in model performance.
+
+__Test different combinations of categorical variables__  
 In this step, we looked at all features ('grade', 'bedrooms', 'bathrooms','view', 'floors', 'condition') which could potentially be treated as either numerical or categorical variables (requiring one-hot-encoding). A function was created to create a list of all possible combinations and then to train and test models for each combination. This revealed that model performance was best when all or almost all of the examined variables were treated as categorical variables. As a result, it was decided that only 'condition', 'sqft_basement', 'sqft_living', and 'sqft_lot' would remain as numerical variables.
 
-__Grid Search__
+__Grid Search__  
 In this final step, we examined whether the Linear Regression model we had been using could be outperformed by Lasso or ElasticNet. The Gridsearch also included different scalers (Standardizer, MinMaxScaler, RobustScaler) to be applied on the numeric variables and various hyperparameters. The winning model of the Grid Search, which included cross validation, was a Lasso model with alpha 7.5 combined with a MinMaxScaler. However, the performance was only trifilingly better than that of the regular Linear Regression model.
 
 ### Conclusion
