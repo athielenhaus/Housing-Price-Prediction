@@ -18,7 +18,7 @@ The following steps were undertaken:
 ##### Exploratory Data Analysis
 After importing the data, EDA was conducted using EDA libraries including Sweetviz and Dataprep as well as by plotting data with Matplotlib and on a map in Tableau.
 This revealed statistical as well as geographic outliers.
-![alt text](https://github.com/athielenhaus/Housing-Price-Prediction/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Screenshot%20Tableau%20Map.jpg)
 
 ##### Creation of a baseline model
 ##### Feature Engineering and Selection
