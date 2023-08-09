@@ -45,7 +45,7 @@ To obtain some industry knowledge, a brief internet research was conducted which
 
 ### Creation of a baseline model
 A baseline vanilla Linear Regression model was created with Scikit Learn. In addition, some data preparation and testing functions were created to facilitate testing. These also included functions for cross validation on the training data and for testing on validation and test sets.
-The initial tests on the raw data (minus the 'id' and 'date' columns) indicated an R2 of approx. 0.7 with an MAE of over $120,000 
+The initial model using the raw data (minus the 'id' and 'date' columns) indicated an R2 of approx. 0.7 with an MAE of over $120,000.
 
 ### Feature Engineering and Selection
 The Feature Engineering and Selection steps included:
