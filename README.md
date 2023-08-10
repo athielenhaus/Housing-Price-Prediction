@@ -71,6 +71,7 @@ It was also considered whether or not to remove approx. 115 properties located o
 __Encoding / Transformation of Geospatial Information__  
 In an initial step, a performance comparison was made between one-hot-encoding and frequency encoding the zip code feature. One-hot-encoding emerged as a clear winner, leading to a significant performance boost and indicating that there is a strong relationship between location and price. However, since zip code areas are large and not necesarily very homogenous areas, it seemed sensible to experiment with smaller geographic units. For this purpose, KMeans was used to cluster the properties according to their latitudinal and longitudinal coordinates. 
 Initial experiments showed that models with one-hot-encoded KMeans clusters outperformed models with encoded zip codes. Subsequently, a function was used to loop through different numbers of clusters to determine which yielded the best model performance. Performance from models between 500 - 600 clusters was practically even and yielded the best results. Since each additional cluster requires additional computations, it was decided to move forward with 500 clusters.  
+
 <img src="geo_clusters.jpg" alt="drawing" width="400"/>
 
 __Removing features__  
@@ -78,6 +79,7 @@ A series of tests was done to train and test models after removing features whic
 
 __Binning__  
 Due to the fact that the column 'yr_renovated' had the problem with 0 values, and 'yr_built' did not have a clear linear relationship with price, it seemed that both could be good candidates for binning. For 'yr_built', model performance was tested with different bin sizes. This revealed that properties built in the 1940s had the lowest values, while those before (presumably considered "historic") and those after were sold at higher prices which increased as the yr_built approached present day. Model performance experiences the greatest (albeit still modest) performance boost when binning was done according to decades, plus one bin including all properties built prior to 1940 and one including properties built between 2010 and 2015. 
+
 <img src="binning.jpg" alt="drawing" width="400"/>
 
 'yr_renovated' was binned in a similar fashion (bins: 'very recent', 'recent', 'distant', 'not relevant'), where properties with 0 values were placed in the 'not relevant' bin. Since >95% of samples had not undergone renovation and thus were assigned to the 'not relevant' bin, there was no possibility of ensuring an even distribution among the bins. Nonetheless, the performance of the model improved slightly. 
