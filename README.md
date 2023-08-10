@@ -21,6 +21,8 @@ The following steps were undertaken to find the model:
 - Feature Engineering and Selection
 - Grid Search
 
+<img src="images/process.jpg" alt="drawing" width="550"/>
+
 The Feature Engineering and Selection as well as the Grid Search steps were accompanied by continuous testing. Below, we provide additional information about the individual steps.
 
 ### Exploratory Data Analysis
