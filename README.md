@@ -33,7 +33,7 @@ Some other learnings from EDA included:
 - some features such as 'grade' and 'view' are ordinal values - they can thus be treated as either numerical or categorical.
 - some features such as 'sqr. ft living' and 'sqr. ft above' are highly correlated with each other, it is likely one can be dropped. 
 - the various square footage features and 'grade' appear to be most highly correlated with price.
-<img src="sc_correlation_matrix.jpg" alt="drawing" width="600"/>
+<img src="images/sc_correlation_matrix.jpg" alt="drawing" width="600"/>
 
 To obtain some industry knowledge, a brief internet research was conducted which revealed that the following can impact real estate price:  
 - Prices of comparable properties
@@ -69,13 +69,13 @@ In addition, some geographic outliers were located using the Tableau map. It was
 
 It was also considered whether or not to remove approx. 115 properties located on two islands (Vashon and Maury Island) only accessible by ferry. However, since the median value of these properties was slightly above the dataset median, they would presumably of interest to our client, so it was decided to keep them in the dataset.  
 
-<img src="geo_outliers.jpg" width="600"/>
+<img src="images/geo_outliers.jpg" width="600"/>
 
 __Encoding / Transformation of Geospatial Information__  
 In an initial step, a performance comparison was made between one-hot-encoding and frequency encoding the zip code feature. One-hot-encoding emerged as a clear winner, leading to a significant performance boost and indicating that there is a strong relationship between location and price. However, since zip code areas are large and not necesarily very homogenous areas, it seemed sensible to experiment with smaller geographic units. For this purpose, KMeans was used to cluster the properties according to their latitudinal and longitudinal coordinates. 
 Initial experiments showed that models with one-hot-encoded KMeans clusters outperformed models with encoded zip codes. Subsequently, a function was used to loop through different numbers of clusters to determine which yielded the best model performance. Performance from models between 500 - 600 clusters was practically even and yielded the best results. Since each additional cluster requires additional computations, it was decided to move forward with 500 clusters.  
 
-<img src="geo_clusters.jpg" alt="drawing" width="400"/>
+<img src="images/geo_clusters.jpg" alt="drawing" width="400"/>
 
 __Removing features__  
 A series of tests was done to train and test models after removing features which appeared to be very similar to / highly correlated with other features. As a result, three features ('sqft_living15', 'sqft_lot15' and 'sqft_above') were removed. This resulted in practically even model performance.
@@ -83,7 +83,7 @@ A series of tests was done to train and test models after removing features whic
 __Binning__  
 Due to the fact that the column 'yr_renovated' had the problem with 0 values, and 'yr_built' did not have a clear linear relationship with price, it seemed that both could be good candidates for binning. For 'yr_built', model performance was tested with different bin sizes. This revealed that properties built in the 1940s had the lowest values, while those after were sold at higher prices which increased as the yr_built approached present day. Properties built before 1940 (presumably considered "historic") also had higher values. Some internet research revealed that houses built from 1890-1910 were often built in a style that was particularly popular ("Queen Anne Style"), and while the data does not contain information about design, properties from these decades tended to have higher prices. Experimentation showed that the model experienced the greatest (albeit still modest) performance boost when binning was done according to decades, plus one bin including all properties built prior to 1940 and one including properties built between 2010 and 2015. 
 
-<img src="binning.jpg" alt="drawing" width="400"/>
+<img src="images/binning.jpg" alt="drawing" width="400"/>
 
 'yr_renovated' was binned in a similar fashion (bins: 'very recent', 'recent', 'distant', 'not relevant'), where properties with 0 values were placed in the 'not relevant' bin. Since >95% of samples had not undergone renovation and thus were assigned to the 'not relevant' bin, there was no possibility of ensuring an even distribution among the bins. Nonetheless, the performance of the model improved slightly. 
 
