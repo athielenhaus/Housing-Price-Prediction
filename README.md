@@ -49,11 +49,13 @@ The initial model using the raw data (minus the 'id' and 'date' columns) indicat
 
 ### Feature Engineering and Selection
 The Feature Engineering and Selection steps included:
-    - Outlier removal  
-    - Encoding / transformation of geospatial information (zip codes and latitude and longitude)  
-    - Feature removal  
-    - Binning  
-    - Testing of different combinations of categorical and numerical features  
+- Outlier removal  
+- Encoding / transformation of geospatial information (zip codes and latitude and longitude)  
+- Feature removal  
+- Binning  
+- Testing of different combinations of categorical and numerical features
+
+The following sections contain more information about the individual feature engineering and selection steps.  
 
 __Outlier Removal__  
 Since the model should be able to forecast the price for a variety of properties but at the same time maintain good accuracy, it was deemed a good idea to remove at least some outliers. Since there were no outliers towards the bottom, the question was how to set the caps. 3 methods were used for determining caps, including:
