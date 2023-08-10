@@ -81,7 +81,7 @@ __Removing features__
 A series of tests was done to train and test models after removing features which appeared to be very similar to / highly correlated with other features. As a result, three features ('sqft_living15', 'sqft_lot15' and 'sqft_above') were removed. This resulted in practically even model performance.
 
 __Binning__  
-Due to the fact that the column 'yr_renovated' had the problem with 0 values, and 'yr_built' did not have a clear linear relationship with price, it seemed that both could be good candidates for binning. For 'yr_built', model performance was tested with different bin sizes. This revealed that properties built in the 1940s had the lowest values, while those before (presumably considered "historic") and those after were sold at higher prices which increased as the yr_built approached present day. Model performance experiences the greatest (albeit still modest) performance boost when binning was done according to decades, plus one bin including all properties built prior to 1940 and one including properties built between 2010 and 2015. 
+Due to the fact that the column 'yr_renovated' had the problem with 0 values, and 'yr_built' did not have a clear linear relationship with price, it seemed that both could be good candidates for binning. For 'yr_built', model performance was tested with different bin sizes. This revealed that properties built in the 1940s had the lowest values, while those after were sold at higher prices which increased as the yr_built approached present day. Properties built before 1940 (presumably considered "historic") also had higher values. Some internet research revealed that houses built from 1890-1910 were often built in a style that was particularly popular ("Queen Anne Style"), and while the data does not contain information about design, properties from these decades tended to have higher prices. Experimentation showed that the model experienced the greatest (albeit still modest) performance boost when binning was done according to decades, plus one bin including all properties built prior to 1940 and one including properties built between 2010 and 2015. 
 
 <img src="binning.jpg" alt="drawing" width="400"/>
 
@@ -107,4 +107,5 @@ Thanks for reading! In case of any questions, please drop me a line at arne.thie
 ### Sources:
 - Insights regarding housing prices: https://www.opendoor.com/articles/factors-that-influence-home-value
 - more insights regarding housing prices: https://www.experian.com/blogs/ask-experian/factors-that-affect-home-value/
-- photo of houses: https://www.gpsmycity.com/discovery/queen-anne-sightseeing-walk-165.html    
+- photo of houses: https://www.gpsmycity.com/discovery/queen-anne-sightseeing-walk-165.html
+- Queen Anne style architecture: https://en.wikipedia.org/wiki/Queen_Anne_style_architecture_in_the_United_States    
