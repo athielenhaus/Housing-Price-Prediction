@@ -1,9 +1,9 @@
-# Housing Price Prediction
+# Predicting Housing Prices in King County
 <img src=https://www.gpsmycity.com/img/ctw/165.jpg />  
 
 
 ## Introduction
-In this project, we look at housing price data from approx. 21,400 properties from King County in the state of Washington, USA. The data describes properties which were sold in a one-month period in 2015. The dataset is from [Kaggle](https://www.kaggle.com/code/madislemsalu/predicting-housing-prices-in-king-county-usa).
+In this project, the focus was housing price data from approx. 21,400 properties from King County in the state of Washington, USA. The data describes properties which were sold in a one-month period in 2015. The dataset is from [Kaggle](https://www.kaggle.com/code/madislemsalu/predicting-housing-prices-in-king-county-usa).
 
 #### Defining the problem
 In this imaginary scenario, the client is a real estate agency in the Seattle area. The agency wishes to predict housing prices with a high level of accuracy. The agency is convinced that there is a linear relationship between the features in the dataset and the housing prices, therefore we will only concentrate on finding a Linear Model. 
@@ -20,6 +20,8 @@ The following steps were undertaken to find the model:
 - Creation of a baseline model
 - Feature Engineering and Selection
 - Grid Search
+
+<img src="images/process.jpg" alt="drawing" width="550"/>
 
 The Feature Engineering and Selection as well as the Grid Search steps were accompanied by continuous testing. Below, we provide additional information about the individual steps.
 
