@@ -1,4 +1,4 @@
-# Housing Price Prediction
+# Predicting Housing Prices in King County
 <img src=https://www.gpsmycity.com/img/ctw/165.jpg />  
 
 
