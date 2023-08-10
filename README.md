@@ -15,7 +15,7 @@ The primary libraries used include:
     
 #### Steps
 
-The following steps were undertaken to find the model:
+The following steps were undertaken to find the model:  
 - Exploratory Data Analysis (EDA)
 - Creation of a baseline model
 - Feature Engineering and Selection
