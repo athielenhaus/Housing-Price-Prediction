@@ -60,12 +60,12 @@ The Feature Engineering and Selection steps included:
 The following sections contain more information about the individual feature engineering and selection steps.  
 
 __Outlier Removal__  
-Since the model should be able to forecast the price for a variety of properties but at the same time maintain good accuracy, it was deemed a good idea to remove at least some outliers. Since there were no outliers towards the bottom, the question was how to set the caps. 3 methods were used for determining caps, including:
+Since the model should be able to forecast the price for a variety of properties but at the same time maintain good accuracy, it was deemed a good idea to remove at least some outliers. Since there were no outliers towards the bottom, the question was how to set the caps. 3 different methods were tested for determining cap placement, including:
 - 3 standard deviations above the mean
 - 95th percentile
 - 99th percentile
 
-Using the 99th percentile as a cap yielded the smallest number of outliers, but nonetheless yielded an immediate improvement in MAE of around 10%.
+Using the 99th percentile as a cap yielded the smallest number of outliers, but nonetheless yielded an immediate improvement in MAE of around 10%. It was therefore decided to use this method for setting the cap.
 
 In addition, some geographic outliers were located using the Tableau map. It was decided to drop properties East of -121.7 degrees longitude, as these properties were located in geographically remote areas and in very different circumstances as the main data set, with a median value below the dataset median.  
 
