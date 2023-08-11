@@ -10,7 +10,7 @@ In this imaginary scenario, the client is a real estate agency in the Seattle ar
 
 #### Tools
 The primary libraries used include:
-- for Exploratory Data Analysis (EDA): Fast ML, Sweetviz, Dataprep and Matplotlib
+- for Exploratory Data Analysis (EDA): Fast ML, Sweetviz, Dataprep, Matplotlib and Tableau
 - for ML: Scikit-Learn, Fast ML
     
 #### Steps
@@ -68,7 +68,7 @@ Since the model should be able to forecast the price for a variety of properties
 
 Using the 99th percentile as a cap yielded the smallest number of outliers, but nonetheless yielded an immediate improvement in MAE of around 10%. It was therefore decided to use this method for setting the cap. This reduced the number of samples to 20,639, so by approximately 4.4%.
 
-In addition, some geographic outliers were located using the Tableau map. It was decided to drop properties East of -121.7 degrees longitude, as these properties were located in geographically remote areas and in very different circumstances as the main data set, with a median value below the dataset median. This reduced the dataset by an additional 22 samples.
+In addition, some geographic outliers were located [using the Tableau map](https://public.tableau.com/app/profile/arne.thielenhaus/viz/KingCountyHousingPrices_16902761948780/MapKingCountyPropertiesandZipCodes#2). It was decided to drop properties East of -121.7 degrees longitude, as these properties were located in geographically remote areas and in very different circumstances as the main data set, with a median value below the dataset median. This reduced the dataset by an additional 22 samples.
 
 It was also considered whether or not to remove approx. 115 properties located on two islands (Vashon and Maury Island) only accessible by ferry. However, since the median value of these properties was slightly above the dataset median, they would presumably of interest to our client, so it was decided to keep them in the dataset.  
 
