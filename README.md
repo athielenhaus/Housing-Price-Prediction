@@ -88,7 +88,9 @@ Due to the fact that the column 'yr_renovated' had the problem with 0 values, an
 
 <img src="images/binning.jpg" alt="drawing" width="400"/>
 
-'yr_renovated' was binned in a similar fashion (bins: 'very recent', 'recent', 'distant', 'not relevant'), where properties with 0 values were placed in the 'not relevant' bin. Since >95% of samples had not undergone renovation and thus were assigned to the 'not relevant' bin, there was no possibility of ensuring an even distribution among the bins. Nonetheless, the performance of the model improved slightly. 
+'yr_renovated' was binned in a similar fashion (bins: ['no renovation', 'pre_1970', 'post_70', 'post_80', 'post_90', 'post_2000','post_2010']), where properties with 0 values were placed in the 'no renovation' bin. Since >95% of samples had not undergone renovation and thus were assigned to this bin, there was no possibility of ensuring an even distribution among the bins. Nonetheless, the performance of the model improved slightly, and there appeared to be a more or less linear relationship between the other bins and price.
+
+<img src="images/binning_renovation.jpg" alt="drawing" width="400"/>
 
 Since the benefits of a renovation also seemed likely to be tied to property age, an experiment was done to combine the 'yr_renovated' and 'yr_built' bins, but this did not yield any improvements in model performance.
 
