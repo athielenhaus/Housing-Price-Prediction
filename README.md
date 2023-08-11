@@ -46,7 +46,8 @@ To obtain some industry knowledge, a brief internet research was conducted which
 
 
 ### Creation of a baseline model
-A baseline vanilla Linear Regression model was created with Scikit Learn. In addition, some data preparation and testing functions were created to facilitate testing. These also included functions for cross validation on the training data and for testing on validation and test sets.
+A baseline vanilla Linear Regression model was created with Scikit Learn. In addition, some data preparation and testing functions were created to facilitate testing. These also included functions for cross validation on the training data and for testing on validation and test sets. The split applied to the dataset consisted of 70% for training, 20% for validation and 10% for testing.
+
 The initial model using the raw data (minus the 'id' and 'date' columns) indicated an R2 of approx. 0.7 with an MAE of over $120,000.
 
 ### Feature Engineering and Selection
@@ -100,14 +101,18 @@ In this final step, it was examined whether the Linear Regression model that was
 ### Conclusion
 Due to the fact that the Linear Regression model was computationally less expensive, performed almost evenly in cross-validation, and performed better on the test set, it was chosen over the Lasso model.
 
-The final model's adjusted R2 score on the test set was 85.3 with an MAE of $69,745. This represents a significant improvement over the baseline model. Nonetheless, it must be admitted that the MAE is still very high and may render the model less useful for predicting house prices. The next step would be to try non-linear models like Random Forest or XGBoost. 
+The final model's adjusted R2 score on the test set was 85.3 with an MAE of $69,745. This represents a significant improvement over the baseline model. Nonetheless, it must be admitted that the MAE is still very high and may render the model less useful for predicting house prices. Next steps could include:  
+- try non-linear models like Random Forest or XGBoost
+- enrich the dataset with additional data (ex: information about nearby schools, crime statistics, etc.)
+- create seperate models for different segments (ex: for high-value homes), as the relationships between independent and dependent variables could be different.
 
 For me personally, the project was highly useful as I learned to work with several new tools and methods, including Scikit-Learn's pipelines and Grid Search. I also learned the utility of creating testing- and scoring functions which can significantly accelerate the testing process.
 
 Thanks for reading! In case of any questions, please drop me a line at arne.thielenhaus@gmail.com.
 
 ### Sources:
-- Insights regarding housing prices: https://www.opendoor.com/articles/factors-that-influence-home-value
-- more insights regarding housing prices: https://www.experian.com/blogs/ask-experian/factors-that-affect-home-value/
+- Insights regarding housing prices:
+    - https://www.opendoor.com/articles/factors-that-influence-home-value
+    - https://www.experian.com/blogs/ask-experian/factors-that-affect-home-value/
 - photo of houses: https://www.gpsmycity.com/discovery/queen-anne-sightseeing-walk-165.html
 - Queen Anne style architecture: https://en.wikipedia.org/wiki/Queen_Anne_style_architecture_in_the_United_States    
