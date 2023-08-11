@@ -92,7 +92,7 @@ Due to the fact that the column 'yr_renovated' had the problem with 0 values, an
 
 <img src="images/binning_renovation.jpg" alt="drawing" width="400"/>
 
-Since the benefits of a renovation also seemed likely to be tied to property age, an experiment was done to combine the 'yr_renovated' and 'yr_built' bins, but this did not yield any improvements in model performance.
+Since the benefits of a renovation also seemed likely to be tied to property age, a comparison was made between combining the 'yr_renovated' and 'yr_built' bins into one bin and keeping them distinct. Combining did not yield any improvements in model performance.
 
 __Test different combinations of categorical variables__  
 This step examined all features ('grade', 'bedrooms', 'bathrooms','view', 'floors', 'condition') which could potentially be treated as either numerical or categorical variables (requiring one-hot-encoding). A function was created to create a list of all possible combinations and then to train and test models for each combination. This revealed that model performance was best when all or almost all of the examined variables were treated as categorical variables. As a result, it was decided that only 'condition', 'sqft_basement', 'sqft_living', and 'sqft_lot' would remain as numerical variables.
