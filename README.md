@@ -27,7 +27,8 @@ The Feature Engineering and Selection as well as the Grid Search steps were acco
 
 ### Exploratory Data Analysis
 After importing the data, EDA was conducted using EDA libraries including Sweetviz and Dataprep as well as by plotting data with Matplotlib and on a map in Tableau.
-The dataset is composed of 21 columns. Two columns, 'id' and 'date', were quickly dropped as their lack of relevance to estimating the price was clear.
+The dataset is composed of 21 columns. The 'id' column was dropped, as was the 'date' column, as all data is from a one-month period.  
+
 Some other learnings from EDA included:
 - no missing data.
 - the column 'yr_renovated' either contains zeros or the year in which the house was renovated and would likely benefit from binning.
