@@ -27,7 +27,8 @@ The Feature Engineering and Selection as well as the Grid Search steps were acco
 
 ### Exploratory Data Analysis
 After importing the data, EDA was conducted using EDA libraries including Sweetviz and Dataprep as well as by plotting data with Matplotlib and on a map in Tableau.
-The dataset is composed of 21 columns. Two columns, 'id' and 'date', were quickly dropped as their lack of relevance to estimating the price was clear.
+The dataset is composed of 21 columns. The 'id' column was dropped, as was the 'date' column, as all data is from a one-month period.  
+
 Some other learnings from EDA included:
 - no missing data.
 - the column 'yr_renovated' either contains zeros or the year in which the house was renovated and would likely benefit from binning.
@@ -88,9 +89,11 @@ Due to the fact that the column 'yr_renovated' had the problem with 0 values, an
 
 <img src="images/binning.jpg" alt="drawing" width="400"/>
 
-'yr_renovated' was binned in a similar fashion (bins: 'very recent', 'recent', 'distant', 'not relevant'), where properties with 0 values were placed in the 'not relevant' bin. Since >95% of samples had not undergone renovation and thus were assigned to the 'not relevant' bin, there was no possibility of ensuring an even distribution among the bins. Nonetheless, the performance of the model improved slightly. 
+'yr_renovated' was binned in a similar fashion (bins: ['no renovation', 'pre_1970', 'post_70', 'post_80', 'post_90', 'post_2000','post_2010']), where properties with 0 values were placed in the 'no renovation' bin. Since >95% of samples had not undergone renovation and thus were assigned to this bin, there was no possibility of ensuring an even distribution among the bins. Nonetheless, the performance of the model improved slightly, and there appeared to be a more or less linear relationship between the other bins and price.
 
-Since the benefits of a renovation also seemed likely to be tied to property age, an experiment was done to combine the 'yr_renovated' and 'yr_built' bins, but this did not yield any improvements in model performance.
+<img src="images/binning_renovation.jpg" alt="drawing" width="400"/>
+
+Since the benefits of a renovation also seemed likely to be tied to property age, a comparison was made between combining the 'yr_renovated' and 'yr_built' bins into one bin and keeping them distinct. Combining did not yield any improvements in model performance.
 
 __Test different combinations of categorical variables__  
 This step examined all features ('grade', 'bedrooms', 'bathrooms','view', 'floors', 'condition') which could potentially be treated as either numerical or categorical variables (requiring one-hot-encoding). A function was created to create a list of all possible combinations and then to train and test models for each combination. This revealed that model performance was best when all or almost all of the examined variables were treated as categorical variables. As a result, it was decided that only 'condition', 'sqft_basement', 'sqft_living', and 'sqft_lot' would remain as numerical variables.
