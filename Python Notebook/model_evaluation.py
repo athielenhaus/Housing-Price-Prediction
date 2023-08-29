@@ -41,7 +41,7 @@ def execute_cross_validate(model_or_pipeline, X_train, y_train, folds=5):
         'r2': 'r2',
         'adjusted_r2': adjusted_r2
     } 
-    scores = cross_validate(model_or_pipeline, X_train, y_train, cv=folds, scoring=scoring)
+    scores = cross_validate(model_or_pipeline, X_train, y_train, cv=folds, scoring=scoring, error_score='raise')
     mean_mae = round(-1 * scores['test_mae'].mean(), 3)
     mean_rmse = round(-1 * scores['test_rmse'].mean(), 3)
     mean_rsquare = round(scores['test_r2'].mean(), 3)

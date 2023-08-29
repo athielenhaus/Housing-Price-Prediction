@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from outlier_handling import remove_outliers
 
 
 # Get data from CSV
@@ -31,6 +30,7 @@ def prep_data_long():
 
 # removes statistical and geographical outliers and drops redundant columns
 def prep_data_ext():
+    from outlier_handling import remove_outliers
     df_sans_outliers = remove_outliers(prep_data())
     df = df_sans_outliers.drop(['sqft_living15', 'sqft_lot15', 'sqft_above'], axis=1)
     return df

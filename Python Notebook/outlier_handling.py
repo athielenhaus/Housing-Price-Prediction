@@ -4,7 +4,7 @@ doing the data splits, and having in the end the kind of data that you’d like 
 import numpy as np
 import pandas as pd
 from collections import Counter
-from basic_data_prep import prep_data, prep_data_long
+import basic_data_prep
 
 
 # function for detecting number of outliers
@@ -55,10 +55,10 @@ def get_outliers(df,
 
 # function for removing statistical outliers
 def remove_stat_outliers(df, features_list):
-    print('Nr. of samples:', len(df))
+    # print('Nr. of samples:', len(df))
     outlier_indices = get_outliers(df, features_list)
     df_sans_outliers = df.drop(outlier_indices, axis = 0).reset_index(drop=True)
-    print('Nr. of samples after statistical outlier removal:', len(df_sans_outliers))
+    # print('Nr. of samples after statistical outlier removal:', len(df_sans_outliers))
     return df_sans_outliers
     
 # feats = ['bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'sqft_above', 'sqft_basement', 'sqft_living15', 'sqft_lot15']
@@ -71,7 +71,7 @@ def remove_geo_outliers(df):
     df_geo = df.copy()
     df_geo.drop(df_geo[df.long > -121.7].index, inplace=True)
     df_geo.reset_index(drop=True, inplace=True)
-    print('Nr. of samples after geo-outlier removal:', len(df_geo))
+    # print('Nr. of samples after geo-outlier removal:', len(df_geo))
     return df_geo
 
 
