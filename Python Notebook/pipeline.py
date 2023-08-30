@@ -34,16 +34,22 @@ def prep_numerical():
     
 # function for creating and testing pipeline
 def test_pipeline(df,
+                  cat_features, 
+                  num_features, 
                   model= LinearRegression(), 
-                  cat_features=['zipcode'], 
-                  num_features=prep_numerical().columns.to_list(),   # should maybe not be passed as default
-                  scale=True,
                   cluster=True,
                   n_clusters=250,
-                  preprocess=True,
                   num_scaler=StandardScaler(),
                   test_eval=False):
     
+    '''NOTE: due to geo_cluster column being created WITHIN the pipeline, the df entering the pipeline does not contain a geo_cluster column
+    Howevever, list of categorical features which is to be one-hot encoded needs to include 'geo_cluster' 
+    
+    'lat' and 'long' are ALWAYS dropped either before entering pipeline as part of if-statement OR as part of first pipeline step in
+    the KMeans-Transformer
+    '''
+    
+    print('cat_features before if statement:', cat_features)
     # if we use Kmeans clusters, we make some adjustments to df and cat_features
     if cluster:
         if 'zipcode' in df:
@@ -56,49 +62,55 @@ def test_pipeline(df,
         if 'lat' in df and 'long' in df:
             df.drop(['lat', 'long'], axis=1, inplace=True)
             
+            
     # TRANSFORMERS      
-    cat_transformer = ('cat', OneHotEncoder(handle_unknown='ignore'), cat_features) # cat_features affected by Kmeans clusters
-    transformers = [cat_transformer]
+    cat_transformer = ('cat', 
+                       OneHotEncoder(handle_unknown='ignore'), 
+                       cat_features)                           # cat_features may be modified by if-statement above
     
-    if scale:                                                 # 'if' allows us to test the impact of scaling
-        num_transformer = ('num', num_scaler, num_features)
-        transformers.append(num_transformer)    
-    preprocessor = ColumnTransformer(transformers= transformers, remainder='passthrough')   # 'remainder' allows columns that are not explicitly mentioned to be passed through
+    num_transformer = ('num', 
+                       num_scaler, 
+                       num_features)
+     
+    preprocessor = ColumnTransformer(transformers= [cat_transformer, num_transformer], 
+                                     remainder='passthrough')   # 'remainder' allows columns that are not explicitly mentioned to be passed through
     
     # PIPELINE STEPS - determined by arguments passed to function
-    if preprocess and cluster:
+    if cluster:
         steps=[('kmeans', KMeansTransformer(n_clusters=n_clusters)),
                ('preprocessor', preprocessor),
                ('model', model)]
-    elif preprocess:
+    else:
         steps = [('preprocessor', preprocessor), 
                  ('model', model)]
-    else:
-        steps = [('model', model)]
+
     
     pipeline = Pipeline(steps=steps)
     
     # SPLIT DATA
     X = df.drop('price', axis = 1)
+    print('columns of X:', list(X.columns))
     y = df['price']
     
-    # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
     
     # keep in case we want to use validation set instead of cross-validate
-    train_size = 0.7
-    valid_size = 0.2      
-    test_size = 0.1
-    X_train, y_train, X_val, y_val, X_test, y_test = get_split(df, 
-                                                               train_size=train_size, 
-                                                               valid_size=valid_size, 
-                                                               test_size=test_size)
-    print(X_train.shape, X_test.shape)
+#     train_size = 0.7
+#     valid_size = 0.2      
+#     test_size = 0.1
+#     X_train, y_train, X_val, y_val, X_test, y_test = get_split(df, 
+#                                                                train_size=train_size, 
+#                                                                valid_size=valid_size, 
+#                                                                test_size=test_size)
+
+    print('shapes of X_train, X_test:', X_train.shape, X_test.shape)
+    
 
     # CROSS-VALIDATE (only uses training data)
     cross_val_scores = execute_cross_validate(pipeline, X_train, y_train, folds=5)
 
     # EVALUATE ON VALIDATION SET - keep in case we want to use validation set instead of cross-validate
-    val_set_scores = eval_on_set(pipeline, X_train, y_train, X_val, y_val)  
+#     val_set_scores = eval_on_set(pipeline, X_train, y_train, X_val, y_val)  
 
     # EVALUATE ON TEST SET
     if test_eval==True:

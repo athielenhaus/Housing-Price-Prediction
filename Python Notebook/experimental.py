@@ -1,16 +1,15 @@
 from sklearn.linear_model import LinearRegression, Lasso, ElasticNet
+from sklearn.model_selection import train_test_split
 from sklearn.cluster import KMeans
+from sklearn.inspection import permutation_importance
+
 import itertools
 
 from outlier_handling import remove_outliers
 from pipeline import test_pipeline
-
-# the following is buggy
-# import eli5
-# from eli5.sklearn import PermutationImportance
-
-from pipeline import test_pipeline
 from basic_data_prep import prep_data
+
+
 
 # function to add geo-clusters with k-means to df
 def add_kmeans_clusters(df, clusters=500, drop_cols=True):
@@ -99,19 +98,22 @@ def test_combinations(opt_features_list, fixed_features_list, model=LinearRegres
 
 
 
+# check feature importance
+def get_perm_importance(df):
+    X = df.drop('price', axis=1)
+    y = df['price']
+    X_train, X_val, y_train, y_val = train_test_split(X, y)
+    model = LinearRegression().fit(X_train, y_train)
+    feature_names= X_train.columns.tolist()
+
+    r = permutation_importance(model, X, y,
+                               n_repeats=30,
+                               random_state=0)
+    
+    for i in r.importances_mean.argsort()[::-1]:
+        if r.importances_mean[i] - 2 * r.importances_std[i] > 0:
+            print(f"{feature_names[i]:<8} "
+                  f"{r.importances_mean[i]:.3f}"
+                  f" +/- {r.importances_std[i]:.3f}")
 
 
-
-
-
-
-
-
-# # check feature importance -BUGGY
-# def get_perm_importance(df):
-#     X = df.drop('price', axis=1)
-#     y = df['price']
-#     X_train, X_val, y_train, y_val = train_test_split(X, y)
-#     reg = LinearRegression().fit(X_train, y_train)
-#     perm = PermutationImportance(reg).fit(X_val, y_val)
-#     return eli5.show_weights(perm, feature_names= X_train.columns.tolist())
