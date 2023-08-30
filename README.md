@@ -47,7 +47,7 @@ To obtain some industry knowledge, a brief internet research was conducted which
 
 
 ### Creation of a baseline model
-A baseline vanilla Linear Regression model was created with Scikit Learn. In addition, some data preparation and testing functions were created to facilitate testing. These also included functions for cross validation on the training data and for testing on validation and test sets. The split applied to the dataset consisted of 70% for training, 20% for validation and 10% for testing.
+A baseline vanilla Linear Regression model was created with Scikit Learn. In addition, some data preparation and testing functions were created to facilitate testing. These also included functions for cross validation on the training data and for testing the model on a test set. The split applied to the dataset consisted of 70% for training / cross-validation, 30% for testing. There was an initial consideration to work with a separate validation set, but since the dataset is of a manageable size and training is short, it was decided to opt for 5-fold cross-validation.
 
 The initial model using the raw data (minus the 'id' and 'date' columns) indicated an R2 of approx. 0.7 with an MAE of over $120,000.
 
