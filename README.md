@@ -81,9 +81,6 @@ Initial experiments showed that models with one-hot-encoded KMeans clusters outp
 
 <img src="images/geo_clusters.jpg" alt="drawing" width="400"/>
 
-__Removing features__  
-A series of tests was done to train and test models after removing features which appeared to be very similar to / highly correlated with other features. As a result, three features ('sqft_living15', 'sqft_lot15' and 'sqft_above') were removed. This resulted in practically even model performance.
-
 __Binning__  
 Due to the fact that the column 'yr_renovated' had the problem with 0 values, and 'yr_built' did not have a clear linear relationship with price, it seemed that both could be good candidates for binning. For 'yr_built', model performance was tested with different bin sizes. This revealed that properties built in the 1940s had the lowest values, while those after were sold at higher prices which increased as the yr_built approached present day. Properties built before 1940 (presumably considered "historic") also had higher values. Some internet research revealed that houses built from 1890-1910 were often built in a style that was particularly popular ("Queen Anne Style"), and while the data does not contain information about design, properties from these decades tended to have higher prices. Experimentation showed that the model experienced the greatest (albeit still modest) performance boost when binning was done according to decades, plus one bin including all properties built prior to 1940 and one including properties built between 2010 and 2015. 
 
@@ -95,8 +92,13 @@ Due to the fact that the column 'yr_renovated' had the problem with 0 values, an
 
 Since the benefits of a renovation also seemed likely to be tied to property age, a comparison was made between combining the 'yr_renovated' and 'yr_built' bins into one bin and keeping them distinct. Combining did not yield any improvements in model performance.
 
-__Test different combinations of categorical variables__  
-This step examined all features ('grade', 'bedrooms', 'bathrooms','view', 'floors', 'condition') which could potentially be treated as either numerical or categorical variables (requiring one-hot-encoding). A function was created to create a list of all possible combinations and then to train and test models for each combination. This revealed that model performance was best when all or almost all of the examined variables were treated as categorical variables. As a result, it was decided that only 'condition', 'sqft_basement', 'sqft_living', and 'sqft_lot' would remain as numerical variables.
+__Additional Engineering and Removal of Features__  
+A series of tests was done to train and test models after removing features which appeared to be very similar to / highly correlated with other features. As a result, the features 'sqft_living15', and 'sqft_lot15' were removed. This resulted in practically even model performance.
+
+During the EDA phase, data plotting indicated that the 'date' feature, i.e. the date on which the house was sold, would not be a useful feature in its original state, so it was converted to two new features, 'month' and 'season'. Plotting these new features indicated some variation in price, and including them resulted in slightly better model performance, 'month' proving to be marginally better. Since the 'month' feature contains more information, it was decided to drop 'season' and only use the 'month' feature for the linear model.
+
+__Test different Combinations of Categorical Variables__  
+This step examined all features ('grade', 'bedrooms', 'bathrooms','view', 'floors', 'condition') which could potentially be treated as either numerical or categorical variables (requiring one-hot-encoding). A function was created to create a list of all possible combinations and then to train and test models for each combination. This revealed that model performance was best when all or almost all of the examined variables were treated as categorical variables. As a result, it was decided that only 'condition', 'bathrooms', 'sqft_basement', 'sqft_living', 'sqft_lot' and 'sqft_above' would remain as numerical variables.
 
 __Grid Search__  
 In this final step, it was examined whether the Linear Regression model that was being used could be outperformed by Lasso or ElasticNet. The grid search also included different scalers (Standardizer, MinMaxScaler, RobustScaler) to be applied on the numeric variables, as well as various hyperparameters. The winning model of the grid search, which included cross validation, was a Lasso model with alpha 7.5 combined with a MinMaxScaler. However, the performance was only trifilingly better than that of the regular Linear Regression model.
