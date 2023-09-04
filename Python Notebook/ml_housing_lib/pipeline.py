@@ -43,15 +43,15 @@ def test_pipeline(df,
                   num_scaler=StandardScaler(),
                   test_eval=False):
     
-    '''NOTE: due to geo_cluster column being created WITHIN the pipeline, the df entering the pipeline does not contain a geo_cluster column
-    Howevever, list of categorical features which is to be one-hot encoded needs to include 'geo_cluster' 
+    '''NOTE: due to geo_cluster column being created WITHIN the pipeline, the dataframe entering the pipeline does not contain a geo_cluster column.
+    Howevever, the list of categorical features which is to be one-hot encoded needs to include 'geo_cluster' 
     
-    'lat' and 'long' are ALWAYS dropped either before entering pipeline as part of if-statement OR as part of first pipeline step in
-    the KMeans-Transformer
+    Also: 'lat' and 'long' are ALWAYS dropped either before entering pipeline as part of if-statement OR as part of first pipeline step in
+    the KMeans-Transformer (they are used for the KMeans transformation, but then dropped at the end)
     '''
     
-    print('cat_features before if statement:', cat_features)
-    # if we use Kmeans clusters, we make some adjustments to df and cat_features
+    # print('cat_features before if statement:', cat_features)
+    # if we use Kmeans clusters, we make some adjustments to the dataframe and categorical features (cat_features)
     if cluster:
         if 'zipcode' in df:
             df.drop('zipcode', axis=1, inplace=True)

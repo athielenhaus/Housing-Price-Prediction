@@ -3,8 +3,8 @@
 
 # Setup GridSearch
 
-# we are encoding zipcode instead of geoclusters because it is much faster for grid search
-cat_features = ['zipcode', 'yr_built_bin', 'renovation_cat', 'grade', 'bedrooms', 'bathrooms','view', 'floors']
+# define categorical and numerical features
+cat_features = ['geo_cluster', 'yr_built_bin', 'renovation_cat', 'grade', 'bedrooms', 'bathrooms','view', 'floors']
 num_features = [ 'condition', 'sqft_basement','sqft_living','sqft_lot']
 
 # Setup transformers

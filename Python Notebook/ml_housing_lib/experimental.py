@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+
 from sklearn.linear_model import LinearRegression, Lasso, ElasticNet
 from sklearn.model_selection import train_test_split
 from sklearn.cluster import KMeans
@@ -70,7 +73,8 @@ def add_results(data, results, cat_subset):
 
 
 # main function for testing different combinations
-def test_combinations(opt_features_list, fixed_features_list, model=LinearRegression()):
+def test_combinations(opt_cat_features_list, fixed_cat_features_list, num_features, model=LinearRegression()):
+    from basic_data_prep import prep_data_fin
     
     data = {
         'categorical_features': [],
@@ -80,15 +84,23 @@ def test_combinations(opt_features_list, fixed_features_list, model=LinearRegres
         'cv_mean_adj_rsquare': [],
     }
     
-    categorical_combinations = get_combinations(opt_features_list)
+    categorical_combinations = get_combinations(opt_cat_features_list)
+    
         
     # loop through categorical feature combinations
     for cat_subset in categorical_combinations:
         
-        categorical_features = cat_subset + fixed_features_list   # we add optional features to fixed features
+        categorical_features = cat_subset + fixed_cat_features_list   # we add optional categorical features to fixed categorical features
         print(categorical_features)
         
-        results = test_pipeline(df=prep_data_ext_bins(), model=model, cluster=True, n_clusters=500, scale=False, cat_features=categorical_features)
+        for feat in categorical_features:
+            if feat in num_features:
+                num_features.remove(feat)
+        print(num_features)
+        
+        results = test_pipeline(df=prep_data_fin(), model=model, cluster=True, n_clusters=500, 
+                                cat_features=categorical_features, 
+                                num_features=num_features)
         
         # FIT MODEL AND GET RESULTS
         data = add_results(data, results, categorical_features)

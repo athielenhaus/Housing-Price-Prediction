@@ -34,6 +34,25 @@ def prep_data_with_date_feats():
     df = df.drop('date', axis=1)
     return df
 
+# Function to map month number to season
+def map_month_to_season(month):
+    if 3 <= month <= 5:
+        return 'spring'
+    elif 6 <= month <= 8:
+        return 'summer'
+    elif 9 <= month <= 11:
+        return 'autumn'
+    else:
+        return 'winter'
+
+# add date features and drop data column
+def prep_data_with_date_feats():
+    df = prep_data()
+    df['month'] = df['date'].dt.month
+    df['season'] = df['month'].apply(map_month_to_season)
+    df = df.drop('date', axis=1)
+    return df
+
 def prep_data_long():
     df = import_data().pipe(preprocess_df).pipe(remove_lat_long)
     return df
@@ -41,6 +60,16 @@ def prep_data_long():
 # removes statistical and geographical outliers and drops redundant columns
 def prep_data_ext():
     from outlier_handling import remove_outliers
-    df_sans_outliers = remove_outliers(prep_data())
-    df = df_sans_outliers.drop(['sqft_living15', 'sqft_lot15', 'sqft_above'], axis=1)
+    df = prep_data()
+    df['month'] = df['date'].dt.month
+    df = df.drop('date', axis=1)
+    df = remove_outliers(df)
+    df = df.drop(['sqft_living15', 'sqft_lot15'], axis=1)
+    return df
+
+
+# final data prep function for model
+def prep_data_fin():
+    from cat_feature_prep import bin_yr_built, bin_yr_renovated
+    df = prep_data_ext().pipe(bin_yr_built).pipe(bin_yr_renovated)
     return df

@@ -66,7 +66,7 @@ def calc_scores(y, y_pred, X):
 
 
 # function for evaluating a model or pipeline on a test set
-def eval_on_set(model_or_pipeline, X_train, y_train, X_test, y_test, set_type='validation'):   # takes instance of a model or pipeline as argument
+def eval_on_set(model_or_pipeline, X_train, y_train, X_test, y_test, set_type='test'):   # takes instance of a model or pipeline as argument
     model_or_pipeline.fit(X_train, y_train)
     y_test_pred = model_or_pipeline.predict(X_test)
     print(f'Performance on {set_type} set:')
