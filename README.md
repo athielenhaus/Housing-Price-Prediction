@@ -104,9 +104,7 @@ __Grid Search__
 In this final step, it was examined whether the Linear Regression model that was being used could be outperformed by Lasso or ElasticNet. The grid search also included different scalers (Standardizer, MinMaxScaler, RobustScaler) to be applied on the numeric variables, as well as various hyperparameters. The winning model of the grid search, which included cross validation, was a Lasso model with alpha 5 combined with a RobustScaler. However, the performance was only trifilingly better than that of the regular Linear Regression model.
 
 ### Conclusion
-Due to the fact that the Linear Regression model was computationally less expensive , performed almost evenly in cross-validation, and performed better on the test set, it was chosen over the Lasso model.
-
-The final model's adjusted R2 score on the test set was 0.849 with an MAE of $71,126.09. This represents a significant improvement over the baseline model. Nonetheless, it must be admitted that the MAE is still fairly high and may render the model less useful for predicting house prices. Next steps could include:  
+The final Lasso model's adjusted R2 score on the test set was 0.849 with an MAE of $71,126.09. This represents a significant improvement over the baseline model. Nonetheless, it must be admitted that the MAE is still fairly high and may render the model less useful for predicting house prices. Next steps could include:  
 - try non-linear models like Random Forest or XGBoost. The fact that one-hot-encoding several features resulted in a slight performance boost indicates that these could be a good option.
 - enrich the dataset with additional data (ex: information about nearby schools, crime statistics, etc.)
 - create seperate models for different segments (ex: for high-value homes), as the relationships between independent and dependent variables could be different.
