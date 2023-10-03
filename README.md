@@ -28,9 +28,9 @@ The primary libraries used include:
 
 The Feature Engineering and Selection as well as the Grid Search steps were accompanied by continuous testing. Below, we provide additional information about the individual steps.
 
-### Exploratory Data Analysis 
+### Exploratory Data Analysis  
 
-[See code in Notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/EDA.ipynb).
+[See code in notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/EDA.ipynb).  
 
 After importing the data, EDA was conducted using EDA libraries including Sweetviz and Dataprep as well as by plotting data with Matplotlib and on a map in Tableau.
 The dataset is composed of 21 columns. The 'id' column was dropped.  
@@ -52,14 +52,16 @@ To obtain some industry knowledge, a brief internet research was conducted which
 - Upgrades
 
 
-### Creation of a baseline model  
-[See code in notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Notebook%20for%20Feature%20Engineering%2C%20Selection%20and%20Modeling.ipynb)
+### Creation of a baseline model   
+[See code in notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Notebook%20for%20Feature%20Engineering%2C%20Selection%20and%20Modeling.ipynb)  
+
 A baseline vanilla Linear Regression model was created with Scikit Learn. In addition, some data preparation and testing functions were created to facilitate testing. These also included functions for cross validation on the training data and for testing the model on a test set. The split applied to the dataset consisted of 70% for training / cross-validation, 30% for testing. There was an initial consideration to work with a separate validation set, but since the dataset is of a manageable size and training is short, it was decided to opt for 5-fold cross-validation.
 
 The initial model using the raw data (minus the 'id' and 'date' columns) indicated an R2 of approx. 0.7 with an MAE of over $120,000.
 
-### Feature Engineering and Selection
-[See code in notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Notebook%20for%20Feature%20Engineering%2C%20Selection%20and%20Modeling.ipynb)
+### Feature Engineering and Selection  
+[See code in notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Notebook%20for%20Feature%20Engineering%2C%20Selection%20and%20Modeling.ipynb)  
+
 The Feature Engineering and Selection steps included:
 - Outlier removal  
 - Encoding / transformation of geospatial information (zip codes and latitude and longitude)  
@@ -108,8 +110,10 @@ During the EDA phase, data plotting indicated that the 'date' feature, i.e. the 
 __Test different Combinations of Categorical Variables__  
 This step examined all features ('grade', 'bedrooms', 'bathrooms','view', 'floors', 'condition') which could potentially be treated as either numerical or categorical variables (requiring one-hot-encoding). A function was created to create a list of all possible combinations and then to train and test models for each combination. This revealed that model performance was best when all or almost all of the examined variables were treated as categorical variables. As a result, it was decided that only 'condition', 'bathrooms', 'sqft_basement', 'sqft_living', 'sqft_lot' and 'sqft_above' would remain as numerical variables.
 
-__Grid Search__  
-[See code in notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Grid%20Search%20and%20Final%20Model.ipynb) 
+__Grid Search__   
+
+[See code in notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Grid%20Search%20and%20Final%20Model.ipynb)   
+
 In this final step, it was examined whether the Linear Regression model that was being used could be outperformed by Lasso or ElasticNet. The grid search also included different scalers (Standardizer, MinMaxScaler, RobustScaler) to be applied on the numeric variables, as well as various hyperparameters. The winning model of the grid search, which included cross validation, was a Lasso model with alpha 5 combined with a RobustScaler. However, the performance was only trifilingly better than that of the regular Linear Regression model.
 
 ### Conclusion
