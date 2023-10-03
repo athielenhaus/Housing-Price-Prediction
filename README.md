@@ -17,8 +17,8 @@ The primary libraries used include:
 
 | Description      | Check out the code      |
 |:------------|-----------|
-| Exploratory Data Analysis (EDA) and baseline model     | [notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/EDA.ipynb)   |
-| Feature Engineering and Selection     | [notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Notebook%20for%20Feature%20Engineering%2C%20Selection%20and%20Modeling.ipynb)   |
+| Exploratory Data Analysis (EDA)    | [notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/EDA.ipynb)   |
+| Baseline Model + Feature Engineering & Selection     | [notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Notebook%20for%20Feature%20Engineering%2C%20Selection%20and%20Modeling.ipynb)   |
 | Grid Search and Final Model     | [notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Grid%20Search%20and%20Final%20Model.ipynb)   |  
 
 
