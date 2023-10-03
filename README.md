@@ -25,7 +25,10 @@ The following steps were undertaken to find the model:
 
 The Feature Engineering and Selection as well as the Grid Search steps were accompanied by continuous testing. Below, we provide additional information about the individual steps.
 
-### Exploratory Data Analysis
+### Exploratory Data Analysis 
+
+[See code in Notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/EDA.ipynb).
+
 After importing the data, EDA was conducted using EDA libraries including Sweetviz and Dataprep as well as by plotting data with Matplotlib and on a map in Tableau.
 The dataset is composed of 21 columns. The 'id' column was dropped.  
 
