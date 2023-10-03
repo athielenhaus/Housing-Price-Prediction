@@ -4,11 +4,6 @@
 ## Introduction
 In this project, the focus was housing price data from approx. 21,600 properties from King County in the state of Washington, USA. The data describes properties which were sold in a one-month period in 2015. The dataset is from [Kaggle](https://www.kaggle.com/code/madislemsalu/predicting-housing-prices-in-king-county-usa).
 
-#### Jump straight into the code
-- [EDA](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/EDA.ipynb)
-- [Feature Engineering & Extraction](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Notebook%20for%20Feature%20Engineering%2C%20Selection%20and%20Modeling.ipynb)
-- [Grid Search & Final Model](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Grid%20Search%20and%20Final%20Model.ipynb)
-
 #### Defining the problem
 In this imaginary scenario, the client is a real estate agency in the Seattle area. The agency wishes to predict housing prices with a high level of accuracy. The agency is convinced that there is a linear relationship between the features in the dataset and the housing prices, therefore we will only concentrate on finding a Linear Model. 
 
@@ -16,6 +11,11 @@ In this imaginary scenario, the client is a real estate agency in the Seattle ar
 The primary libraries used include:
 - for Exploratory Data Analysis (EDA): Fast ML, Sweetviz, Dataprep, Matplotlib and Tableau
 - for ML: Scikit-Learn, Fast ML
+
+#### Jump straight into the code
+- [EDA](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/EDA.ipynb)
+- [Feature Engineering & Extraction](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Notebook%20for%20Feature%20Engineering%2C%20Selection%20and%20Modeling.ipynb)
+- [Grid Search & Final Model](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Grid%20Search%20and%20Final%20Model.ipynb)
     
 #### Steps
 
