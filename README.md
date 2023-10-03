@@ -12,18 +12,17 @@ The primary libraries used include:
 - for Exploratory Data Analysis (EDA): Fast ML, Sweetviz, Dataprep, Matplotlib and Tableau
 - for ML: Scikit-Learn, Fast ML
 
-#### Jump straight into the code
-- [EDA](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/EDA.ipynb)
-- [Feature Engineering & Extraction](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Notebook%20for%20Feature%20Engineering%2C%20Selection%20and%20Modeling.ipynb)
-- [Grid Search & Final Model](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Grid%20Search%20and%20Final%20Model.ipynb)
     
 #### Steps
 
-The following steps were undertaken to find the model:  
-- Exploratory Data Analysis (EDA)
-- Creation of a baseline model
-- Feature Engineering and Selection
-- Grid Search
+| Description      | Check out the code      |
+|:------------|-----------|
+| Exploratory Data Analysis (EDA) and baseline model     | [notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/EDA.ipynb)   |
+| Feature Engineering and Selection     | [notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Notebook%20for%20Feature%20Engineering%2C%20Selection%20and%20Modeling.ipynb)   |
+| Grid Search and Final Model     | [notebook](https://github.com/athielenhaus/Housing-Price-Prediction/blob/main/Python%20Notebook/Grid%20Search%20and%20Final%20Model.ipynb)   |  
+
+
+
 
 <img src="images/process.jpg" alt="drawing" width="550"/>
 
